@@ -2,6 +2,7 @@ packages:
   effect-zoo.cabal
   simple-effects-0.13.0.0/
 
+with-compiler: ghc-9.4.3
 -- package effect-zoo
 --   ghc-options:
 --     -j
@@ -13,3 +14,6 @@ packages:
 --     -ddump-simpl
 --     -ddump-hi
 --     -ddump-stg-final
+
+allow-newer:
+  freer-simple:template-haskell
