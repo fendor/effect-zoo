@@ -1,5 +1,6 @@
 packages:
   effect-zoo.cabal
+  simple-effects-0.13.0.0/
 
 -- package effect-zoo
 --   ghc-options:
