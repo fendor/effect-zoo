@@ -1,8 +1,6 @@
 module EffectZoo.Scenario.BigStack where
 
 import           Criterion
-import qualified EffectZoo.Scenario.BigStack.Eff.Main
-                                               as Eff
 import qualified EffectZoo.Scenario.BigStack.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.BigStack.FusedEffects.Main
@@ -54,14 +52,6 @@ benchmarks = do
         , (1 , Polysemy.bigStack1)
         , (5 , Polysemy.bigStack5)
         , (10, Polysemy.bigStack10)
-        -- , (20, Eff.bigStack20)
-        ]
-      )
-    , ( "eff"
-      , [ (0 , Eff.bigStack0)
-        , (1 , Eff.bigStack1)
-        , (5 , Eff.bigStack5)
-        , (10, Eff.bigStack10)
         -- , (20, Eff.bigStack20)
         ]
       )

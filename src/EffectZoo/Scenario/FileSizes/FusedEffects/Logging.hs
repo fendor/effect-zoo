@@ -4,7 +4,6 @@
 
 module EffectZoo.Scenario.FileSizes.FusedEffects.Logging where
 
-import GHC.Generics (Generic1)
 import "fused-effects" Control.Algebra
 import "fused-effects" Control.Effect.Sum
 import           Control.Monad.IO.Class
@@ -12,15 +11,13 @@ import           Control.Monad.Trans.Reader
 import           Data.IORef
 import qualified EffectZoo.Scenario.FileSizes.Shared
                                                as Shared
+import Data.Kind
 
-data Logging m k = LogMsg String (m k)
-  deriving (Functor, Generic1)
+data Logging (m :: Type -> Type) a where
+  LogMsg :: String -> Logging m ()
 
 logMsg :: Has Logging sig m => String -> m ()
-logMsg msg = send (LogMsg msg (pure ()))
-
-instance HFunctor Logging
-instance Effect Logging
+logMsg msg = send (LogMsg msg)
 
 newtype LogIOC m a = LogIOC
   { unLogIOC :: ReaderT (IORef [String]) m a
@@ -30,6 +27,6 @@ runLogIOC :: IORef [String] -> LogIOC m a -> m a
 runLogIOC r (LogIOC (ReaderT m)) = m r
 
 instance (Algebra sig m, MonadIO m) => Algebra (Logging :+: sig) (LogIOC m) where
-  alg (L (LogMsg msg k)) =
-    LogIOC (ReaderT $ \r -> liftIO (Shared.logToIORef r msg)) >> k
-  alg (R other) = LogIOC (alg (R (handleCoercible other)))
+  alg hdl sig ctx = case sig of
+    L (LogMsg msg) -> (<$ ctx) <$> (LogIOC $ ReaderT $ \r -> liftIO (Shared.logToIORef r msg))
+    R other -> LogIOC $ ReaderT $ \r -> (alg ((`runReaderT` r) . unLogIOC . hdl) other ctx)

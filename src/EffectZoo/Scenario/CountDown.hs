@@ -1,8 +1,6 @@
 module EffectZoo.Scenario.CountDown where
 
 import           Criterion
-import qualified EffectZoo.Scenario.CountDown.Eff.Main
-                                               as Eff
 import qualified EffectZoo.Scenario.CountDown.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.CountDown.FusedEffects.Main
@@ -27,7 +25,6 @@ benchmarks = do
     , ("simple-effects", nf SimpleEffects.countDown)
     , ("fused-effects" , nf FusedEffects.countDown)
     , ("polysemy"      , nf Polysemy.countDown)
-    , ("eff"           , nf Eff.countDown)
     , ("Reference"     , nf Reference.countDown)
     ]
 
