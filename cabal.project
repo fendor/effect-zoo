@@ -1,6 +1,7 @@
 packages:
   effect-zoo.cabal
   simple-effects-0.13.0.0/
+  ../minieff
 
 with-compiler: ghc-9.4.3
 -- package effect-zoo

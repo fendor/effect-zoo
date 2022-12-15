@@ -16,6 +16,7 @@ executable effect-zoo
     , criterion
     , freer-simple
     , fused-effects
+    , minieff
     , mtl
     , polysemy
     , simple-effects
@@ -32,6 +33,9 @@ executable effect-zoo
     EffectZoo.Scenario.BigStack.FusedEffects.Identity
     EffectZoo.Scenario.BigStack.FusedEffects.Main
     EffectZoo.Scenario.BigStack.FusedEffects.Program
+    EffectZoo.Scenario.BigStack.MiniEff.Identity
+    EffectZoo.Scenario.BigStack.MiniEff.Main
+    EffectZoo.Scenario.BigStack.MiniEff.Program
     EffectZoo.Scenario.BigStack.MTL.Identity
     EffectZoo.Scenario.BigStack.MTL.Main
     EffectZoo.Scenario.BigStack.MTL.Program
@@ -46,6 +50,8 @@ executable effect-zoo
     EffectZoo.Scenario.CountDown.FreerSimple.Program
     EffectZoo.Scenario.CountDown.FusedEffects.Main
     EffectZoo.Scenario.CountDown.FusedEffects.Program
+    EffectZoo.Scenario.CountDown.MiniEff.Main
+    EffectZoo.Scenario.CountDown.MiniEff.Program
     EffectZoo.Scenario.CountDown.MTL.LazyStateT
     EffectZoo.Scenario.CountDown.MTL.Program
     EffectZoo.Scenario.CountDown.MTL.StrictStateT
@@ -63,6 +69,10 @@ executable effect-zoo
     EffectZoo.Scenario.FileSizes.FusedEffects.Logging
     EffectZoo.Scenario.FileSizes.FusedEffects.Main
     EffectZoo.Scenario.FileSizes.FusedEffects.Program
+    EffectZoo.Scenario.FileSizes.MiniEff.File
+    EffectZoo.Scenario.FileSizes.MiniEff.Logging
+    EffectZoo.Scenario.FileSizes.MiniEff.Main
+    EffectZoo.Scenario.FileSizes.MiniEff.Program
     EffectZoo.Scenario.FileSizes.MTL.File
     EffectZoo.Scenario.FileSizes.MTL.Logging
     EffectZoo.Scenario.FileSizes.MTL.Main
@@ -86,6 +96,10 @@ executable effect-zoo
     EffectZoo.Scenario.Reinterpretation.FusedEffects.Logging
     EffectZoo.Scenario.Reinterpretation.FusedEffects.Main
     EffectZoo.Scenario.Reinterpretation.FusedEffects.Zooit
+    EffectZoo.Scenario.Reinterpretation.MiniEff.HTTP
+    EffectZoo.Scenario.Reinterpretation.MiniEff.Logging
+    EffectZoo.Scenario.Reinterpretation.MiniEff.Main
+    EffectZoo.Scenario.Reinterpretation.MiniEff.Zooit
     EffectZoo.Scenario.Reinterpretation.Polysemy.HTTP
     EffectZoo.Scenario.Reinterpretation.Polysemy.Logging
     EffectZoo.Scenario.Reinterpretation.Polysemy.Main
