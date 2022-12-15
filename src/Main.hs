@@ -23,7 +23,7 @@ main = for_
     ]
     (\(name, scenario) -> do
       let config = defaultConfig
-            { reportFile = Just (name <> ".html") }
+            { reportFile = Just (name <> ".html"), csvFile = Just (name <> ".csv") }
       defaultMainWith config scenario
       -- reports <- for
       --   scenario
