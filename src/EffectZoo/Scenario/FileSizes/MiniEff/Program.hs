@@ -1,21 +1,19 @@
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE QualifiedDo #-}
 
 module EffectZoo.Scenario.FileSizes.MiniEff.Program where
 
 import           MiniEff
-import qualified Control.IxMonad as Ix
 import           EffectZoo.Scenario.FileSizes.MiniEff.File
 import           EffectZoo.Scenario.FileSizes.MiniEff.Logging
 
 program :: (Member File effs, Member Logging effs) => [FilePath] -> MiniEff effs IVoid () () Int
-program files = Ix.do
-  sizes <- Ix.mapM calculateFileSize files
-  Ix.return (sum sizes)
+program files = do
+  sizes <- mapM calculateFileSize files
+  return (sum sizes)
 
 calculateFileSize
   :: (Member File effs, Member Logging effs) => FilePath -> MiniEff effs IVoid () () Int
-calculateFileSize path = Ix.do
+calculateFileSize path = do
   logMsg ("Calculating the size of " ++ path)
   msize <- tryFileSize path
   case msize of

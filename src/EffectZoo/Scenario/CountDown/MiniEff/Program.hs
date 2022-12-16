@@ -1,17 +1,15 @@
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE QualifiedDo #-}
 
 module EffectZoo.Scenario.CountDown.MiniEff.Program where
 
 import Simple.State
 import MiniEff
-import Control.IxMonad as Ix
 
 program :: Member (State Int) eff => MiniEff eff IVoid () () Int
-program = Ix.do
+program = do
   n <- get
   if n <= 0
-    then Ix.pure n
-    else Ix.do
+    then pure n
+    else do
       put (n - 1)
       program

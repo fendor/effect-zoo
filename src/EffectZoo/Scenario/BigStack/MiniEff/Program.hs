@@ -1,15 +1,15 @@
 {-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE QualifiedDo #-}
 module EffectZoo.Scenario.BigStack.MiniEff.Program where
 
 import Simple.Reader
 import Simple.State
 import MiniEff
 import qualified Control.IxMonad as Ix
+import           Control.Monad
 
 program
   :: (Member (State Int) effs, Member (Reader Int) effs)
   => MiniEff effs IVoid () () ()
-program = Ix.do
+program = do
   n <- ask
-  Ix.replicateM_ n (modify (+ n))
+  replicateM_ n (modify (+ n))
