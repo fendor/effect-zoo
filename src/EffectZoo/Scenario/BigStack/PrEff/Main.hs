@@ -1,14 +1,14 @@
 {-# LANGUAGE FlexibleContexts #-}
 
-module EffectZoo.Scenario.BigStack.MiniEff.Main where
+module EffectZoo.Scenario.BigStack.PrEff.Main where
 
 import Simple.Reader
 import Simple.State
-import MiniEff
+import PrEff
 import           Control.Monad
 import           Data.Function
-import           EffectZoo.Scenario.BigStack.MiniEff.Identity
-import           EffectZoo.Scenario.BigStack.MiniEff.Program
+import           EffectZoo.Scenario.BigStack.PrEff.Identity
+import           EffectZoo.Scenario.BigStack.PrEff.Program
 
 bigStack0 :: Int -> Int
 bigStack0 s = program & runReader n & execState s & run

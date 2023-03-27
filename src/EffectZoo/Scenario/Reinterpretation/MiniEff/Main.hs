@@ -1,13 +1,13 @@
-module EffectZoo.Scenario.Reinterpretation.MiniEff.Main where
+module EffectZoo.Scenario.Reinterpretation.PrEff.Main where
 
 import Control.IxMonad as Ix
-import MiniEff
+import PrEff
 import Simple.Reader
 import Simple.Writer
 import Data.Function
-import EffectZoo.Scenario.Reinterpretation.MiniEff.HTTP
-import EffectZoo.Scenario.Reinterpretation.MiniEff.Logging
-import EffectZoo.Scenario.Reinterpretation.MiniEff.Zooit
+import EffectZoo.Scenario.Reinterpretation.PrEff.HTTP
+import EffectZoo.Scenario.Reinterpretation.PrEff.Logging
+import EffectZoo.Scenario.Reinterpretation.PrEff.Zooit
                                                as Zooit
 import EffectZoo.Scenario.Reinterpretation.Shared
 

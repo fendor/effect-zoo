@@ -1,10 +1,10 @@
-module EffectZoo.Scenario.FileSizes.MiniEff.Main where
+module EffectZoo.Scenario.FileSizes.PrEff.Main where
 
-import           MiniEff
+import           PrEff
 import           Data.IORef
-import           EffectZoo.Scenario.FileSizes.MiniEff.File
-import           EffectZoo.Scenario.FileSizes.MiniEff.Logging
-import           EffectZoo.Scenario.FileSizes.MiniEff.Program
+import           EffectZoo.Scenario.FileSizes.PrEff.File
+import           EffectZoo.Scenario.FileSizes.PrEff.Logging
+import           EffectZoo.Scenario.FileSizes.PrEff.Program
 
 calculateFileSizes :: [FilePath] -> IO (Int, [String])
 calculateFileSizes files = do

@@ -5,8 +5,8 @@ import qualified EffectZoo.Scenario.CountDown.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.CountDown.FusedEffects.Main
                                                as FusedEffects
-import qualified EffectZoo.Scenario.CountDown.MiniEff.Main
-                                               as MiniEff
+import qualified EffectZoo.Scenario.CountDown.PrEff.Main
+                                               as PrEff
 import qualified EffectZoo.Scenario.CountDown.MTL.LazyStateT
                                                as MTLLazyStateT
 import qualified EffectZoo.Scenario.CountDown.MTL.StrictStateT
@@ -27,7 +27,7 @@ benchmarks = do
     , ("simple-effects", nf SimpleEffects.countDown)
     , ("fused-effects" , nf FusedEffects.countDown)
     , ("polysemy"      , nf Polysemy.countDown)
-    , ("minieff"      , nf MiniEff.countDown)
+    , ("preff"      , nf PrEff.countDown)
     , ("Reference"     , nf Reference.countDown)
     ]
 

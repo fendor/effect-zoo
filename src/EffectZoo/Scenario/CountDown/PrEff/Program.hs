@@ -1,11 +1,11 @@
 {-# LANGUAGE FlexibleContexts #-}
 
-module EffectZoo.Scenario.CountDown.MiniEff.Program where
+module EffectZoo.Scenario.CountDown.PrEff.Program where
 
 import Simple.State
-import MiniEff
+import PrEff
 
-program :: Member (State Int) eff => MiniEff eff IVoid () () Int
+program :: Member (State Int) eff => PrEff eff IVoid () () Int
 program = do
   n <- get
   if n <= 0

@@ -1,18 +1,18 @@
 {-# LANGUAGE FlexibleContexts #-}
 
-module EffectZoo.Scenario.FileSizes.MiniEff.Program where
+module EffectZoo.Scenario.FileSizes.PrEff.Program where
 
-import           MiniEff
-import           EffectZoo.Scenario.FileSizes.MiniEff.File
-import           EffectZoo.Scenario.FileSizes.MiniEff.Logging
+import           PrEff
+import           EffectZoo.Scenario.FileSizes.PrEff.File
+import           EffectZoo.Scenario.FileSizes.PrEff.Logging
 
-program :: (Member File effs, Member Logging effs) => [FilePath] -> MiniEff effs IVoid () () Int
+program :: (Member File effs, Member Logging effs) => [FilePath] -> PrEff effs IVoid () () Int
 program files = do
   sizes <- mapM calculateFileSize files
   return (sum sizes)
 
 calculateFileSize
-  :: (Member File effs, Member Logging effs) => FilePath -> MiniEff effs IVoid () () Int
+  :: (Member File effs, Member Logging effs) => FilePath -> PrEff effs IVoid () () Int
 calculateFileSize path = do
   logMsg ("Calculating the size of " ++ path)
   msize <- tryFileSize path

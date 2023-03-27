@@ -5,8 +5,8 @@ import qualified EffectZoo.Scenario.FileSizes.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.FileSizes.FusedEffects.Main
                                                as FusedEffects
-import qualified EffectZoo.Scenario.FileSizes.MiniEff.Main
-                                               as MiniEff
+import qualified EffectZoo.Scenario.FileSizes.PrEff.Main
+                                               as PrEff
 import qualified EffectZoo.Scenario.FileSizes.MTL.Main
                                                as MTL
 import qualified EffectZoo.Scenario.FileSizes.Polysemy.Main
@@ -24,7 +24,7 @@ benchmarks = do
     , ( "fused-effects" , FusedEffects.calculateFileSizes )
     , ( "mtl" , MTL.calculateFileSizes )
     , ( "polysemy" , Polysemy.calculateFileSizes )
-    , ( "minieff" , MiniEff.calculateFileSizes )
+    , ( "preff" , PrEff.calculateFileSizes )
     , ( "Reference", Reference.calculateFileSizes )
     ]
 

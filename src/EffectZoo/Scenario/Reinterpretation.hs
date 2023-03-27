@@ -5,8 +5,8 @@ import qualified EffectZoo.Scenario.Reinterpretation.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.Reinterpretation.FusedEffects.Main
                                                as FusedEffects
-import qualified EffectZoo.Scenario.Reinterpretation.MiniEff.Main
-                                               as MiniEff
+import qualified EffectZoo.Scenario.Reinterpretation.PrEff.Main
+                                               as PrEff
 import qualified EffectZoo.Scenario.Reinterpretation.Polysemy.Main
                                                as Polysemy
 import qualified EffectZoo.Scenario.Reinterpretation.SimpleEffects.Main
@@ -19,7 +19,7 @@ benchmarks = do
     , ("fused-effects" , FusedEffects.listScenarios)
     , ("simple-effects", SimpleEffects.listScenarios)
     , ("polysemy", Polysemy.listScenarios)
-    , ("minieff", MiniEff.listScenarios)
+    , ("preff", PrEff.listScenarios)
     ]
   pure $ bgroup name $ flip map [1, 10, 100] $ \n ->
     bench (show n) (nf program n)

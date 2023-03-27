@@ -5,8 +5,8 @@ import qualified EffectZoo.Scenario.BigStack.FreerSimple.Main
                                                as FreerSimple
 import qualified EffectZoo.Scenario.BigStack.FusedEffects.Main
                                                as FusedEffects
-import qualified EffectZoo.Scenario.BigStack.MiniEff.Main
-                                               as MiniEff
+import qualified EffectZoo.Scenario.BigStack.PrEff.Main
+                                               as PrEff
 import qualified EffectZoo.Scenario.BigStack.MTL.Main
                                                as MTL
 import qualified EffectZoo.Scenario.BigStack.Polysemy.Main
@@ -57,12 +57,12 @@ benchmarks = do
         -- , (20, Eff.bigStack20)
         ]
       )
-    , ( "minieff"
-      , [ (0 , MiniEff.bigStack0)
-        , (1 , MiniEff.bigStack1)
-        , (5 , MiniEff.bigStack5)
-        , (10, MiniEff.bigStack10)
-        -- , (20, MiniEff.bigStack20)
+    , ( "preff"
+      , [ (0 , PrEff.bigStack0)
+        , (1 , PrEff.bigStack1)
+        , (5 , PrEff.bigStack5)
+        , (10, PrEff.bigStack10)
+        -- , (20, PrEff.bigStack20)
         ]
       )
     ]

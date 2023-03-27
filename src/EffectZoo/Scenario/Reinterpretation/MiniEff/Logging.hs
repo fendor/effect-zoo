@@ -1,14 +1,14 @@
 {-# language DataKinds, FlexibleContexts, GADTs, TypeOperators #-}
-module EffectZoo.Scenario.Reinterpretation.MiniEff.Logging where
+module EffectZoo.Scenario.Reinterpretation.PrEff.Logging where
 
-import MiniEff
+import PrEff
 import Simple.Writer
 
 data Logging a where
   LogMsg :: String -> Logging ()
 
-logMsg :: Member Logging effs => String -> MiniEff effs s p p ()
+logMsg :: Member Logging effs => String -> PrEff effs s p p ()
 logMsg = send . LogMsg
 
-accumulateLogMessages :: MiniEff (Logging ': effs) IVoid () () a -> MiniEff (Writer [String] ': effs) IVoid () () a
+accumulateLogMessages :: PrEff (Logging ': effs) IVoid () () a -> PrEff (Writer [String] ': effs) IVoid () () a
 accumulateLogMessages = reinterpret $ \(LogMsg m) -> tell [m]
