@@ -1,8 +1,8 @@
 {-# LANGUAGE FlexibleContexts #-}
 module EffectZoo.Scenario.BigStack.PrEff.Program where
 
-import Simple.Reader
-import Simple.State
+import PrEff.Simple.Reader
+import PrEff.Simple.State
 import PrEff
 import qualified Control.IxMonad as Ix
 import           Control.Monad

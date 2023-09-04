@@ -2,7 +2,7 @@
 
 module EffectZoo.Scenario.CountDown.PrEff.Program where
 
-import Simple.State
+import PrEff.Simple.State
 import PrEff
 
 program :: Member (State Int) eff => PrEff eff IVoid () () Int

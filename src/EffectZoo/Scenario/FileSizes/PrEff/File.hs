@@ -12,5 +12,5 @@ data File a where
 tryFileSize :: Member File effs => FilePath -> PrEff effs IVoid () () (Maybe Int)
 tryFileSize = send . TryFileSize
 
-fileIO :: Member IIO effs => PrEff (File ': effs) IVoid () () a -> PrEff effs IVoid () () a
-fileIO = interpret (\(TryFileSize path) -> embedIO $ Shared.tryGetFileSize path)
+fileIO :: Member (Embed IO) effs => PrEff (File ': effs) IVoid () () a -> PrEff effs IVoid () () a
+fileIO = interpret (\(TryFileSize path) -> embed $ Shared.tryGetFileSize path)

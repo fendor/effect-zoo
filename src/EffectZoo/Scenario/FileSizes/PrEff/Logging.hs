@@ -16,8 +16,8 @@ logMsg :: Member Logging effs => String -> PrEff effs f p p ()
 logMsg = send . LogMsg
 
 logToIORef
-  :: Member IIO effs
+  :: Member (Embed IO) effs
   => IORef [String]
   -> PrEff (Logging ': effs) IVoid () () a
   -> PrEff effs IVoid () () a
-logToIORef r = interpret (\(LogMsg m) -> embedIO (Shared.logToIORef r m))
+logToIORef r = interpret (\(LogMsg m) -> embed (Shared.logToIORef r m))

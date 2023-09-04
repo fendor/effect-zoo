@@ -2,8 +2,8 @@
 
 module EffectZoo.Scenario.BigStack.PrEff.Main where
 
-import Simple.Reader
-import Simple.State
+import PrEff.Simple.Reader
+import PrEff.Simple.State
 import PrEff
 import           Control.Monad
 import           Data.Function

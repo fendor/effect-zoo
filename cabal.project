@@ -3,7 +3,7 @@ packages:
   simple-effects-0.13.0.0/
   ../preff
 
-with-compiler: ghc-9.4.4
+with-compiler: ghc-9.4.5
 -- package effect-zoo
 --   ghc-options:
 --     -j

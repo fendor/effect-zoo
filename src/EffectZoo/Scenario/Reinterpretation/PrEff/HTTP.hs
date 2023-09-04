@@ -2,7 +2,7 @@
 module EffectZoo.Scenario.Reinterpretation.PrEff.HTTP where
 
 import PrEff
-import Simple.Reader
+import PrEff.Simple.Reader
 
 data HTTP a where
   HttpGET :: String -> HTTP String

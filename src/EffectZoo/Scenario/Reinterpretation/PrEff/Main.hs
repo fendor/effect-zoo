@@ -2,8 +2,8 @@ module EffectZoo.Scenario.Reinterpretation.PrEff.Main where
 
 import Control.IxMonad as Ix
 import PrEff
-import Simple.Reader
-import Simple.Writer
+import PrEff.Simple.Reader
+import PrEff.Simple.Writer
 import Data.Function
 import EffectZoo.Scenario.Reinterpretation.PrEff.HTTP
 import EffectZoo.Scenario.Reinterpretation.PrEff.Logging

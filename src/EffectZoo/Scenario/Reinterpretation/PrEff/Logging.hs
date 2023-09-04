@@ -2,7 +2,7 @@
 module EffectZoo.Scenario.Reinterpretation.PrEff.Logging where
 
 import PrEff
-import Simple.Writer
+import PrEff.Simple.Writer
 
 data Logging a where
   LogMsg :: String -> Logging ()
