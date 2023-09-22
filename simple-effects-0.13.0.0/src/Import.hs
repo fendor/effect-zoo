@@ -5,7 +5,6 @@ import Control.Monad.State as X
 import Control.Monad.Catch as X
 import Control.Monad.Random as X
 import Control.Monad.Trans.Identity as X hiding (liftCallCC, liftCatch)
-import Control.Monad.Trans.Error as X hiding (liftListen, liftCallCC, liftPass)
 import Control.Monad.Trans.Except as X hiding (liftListen, liftCallCC, liftPass)
 import Control.Monad.Trans.Maybe as X hiding (liftListen, liftCallCC, liftCatch, liftPass)
 import Control.Monad.Reader as X

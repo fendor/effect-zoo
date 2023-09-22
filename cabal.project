@@ -3,18 +3,7 @@ packages:
   simple-effects-0.13.0.0/
   ../preff
 
-with-compiler: ghc-9.4.5
--- package effect-zoo
---   ghc-options:
---     -j
---     -ddump-to-file
---     -dsuppress-coercions
---     -dsuppress-type-applications
---     -dsuppress-module-prefixes
---     -- -dsuppress-idinfo
---     -ddump-simpl
---     -ddump-hi
---     -ddump-stg-final
+with-compiler: ghc-9.6.2
 
 allow-newer:
   freer-simple:template-haskell

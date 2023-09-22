@@ -161,14 +161,6 @@ instance RunnableTrans IdentityT where
     restoreTransState = return
     runTransformer m () = runIdentityT m
 
-instance Error e => RunnableTrans (ErrorT e) where
-    type TransformerState (ErrorT e) m = ()
-    type TransformerResult (ErrorT e) a = Either e a
-    currentTransState = return ()
-    restoreTransState (Left e) = throwError e
-    restoreTransState (Right a) = return a
-    runTransformer m () = runErrorT m
-
 instance RunnableTrans (ExceptT e) where
     type TransformerState (ExceptT e) m = ()
     type TransformerResult (ExceptT e) a = Either e a
