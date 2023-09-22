@@ -8,8 +8,8 @@ import qualified Control.IxMonad as Ix
 import           Control.Monad
 
 program
-  :: (Member (State Int) effs, Member (Reader Int) effs)
-  => PrEff effs IVoid () () ()
+  :: (Member (State Int) f, Member (Reader Int) f)
+  => PrEff f IVoid () () ()
 program = do
   n <- ask
   replicateM_ n (modify (+ n))
